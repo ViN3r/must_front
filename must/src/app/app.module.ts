@@ -7,6 +7,10 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthentificationService } from './service/authentification.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,12 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatInputModule,
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthentificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
