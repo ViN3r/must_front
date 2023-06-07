@@ -14,7 +14,8 @@ export class LoginComponent {
     console.log('authentification');
     this.authentificationService.authentification('', '').subscribe(
       {next : (res) =>  console.log('authentification reussi ', res),
-      error:  (error) => console.log('authentification failed', error)}
+      error:  (error) => console.log('authentification failed', error),
+    complete: () => { console.log("ici")}}
       );
   }
 }
