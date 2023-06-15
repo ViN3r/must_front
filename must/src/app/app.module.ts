@@ -11,12 +11,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthentificationService } from './service/authentification.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BasDePageComponent } from './component/bas-de-page/bas-de-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    LoginComponent
+    LoginComponent,
+    BasDePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { AuthentificationService } from './service/authentification.service';
     AppRoutingModule,
     MatInputModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [AuthentificationService],
   bootstrap: [AppComponent]
