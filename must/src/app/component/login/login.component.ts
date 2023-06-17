@@ -12,7 +12,7 @@ export class LoginComponent {
   password: string = '';
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]]
+    mdp: ['', [Validators.required]]
   });
 
   constructor (private authentificationService: AuthentificationService, private fb: FormBuilder) {
