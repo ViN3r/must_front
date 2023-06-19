@@ -16,6 +16,6 @@ export class AuthentificationService {
   constructor(private http: HttpClient) { }
 
   authentification(formulaire: any ): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/api/authentification?email=${formulaire.email}&password=${formulaire.mdp}`, this.optionRequete );
+    return this.http.get<any>(`/api/authentification?email=${formulaire.email}&password=${formulaire.mdp}`, this.optionRequete );
   }
 }
