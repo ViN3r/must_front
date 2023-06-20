@@ -1,4 +1,4 @@
-<div class="corps">
+<div class="corps" fxLayoutAlign="space-around center" >
   <form class="corps__form" [formGroup]="form">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Email</mat-label>
@@ -7,8 +7,13 @@
     
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Mot de passe</mat-label>
-        <input matInput placeholder="Ex. Pizza"  formControlName="mdp">
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Ex. Pizza"  formControlName="mdp">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon> {{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
       </mat-form-field>
       <button mat-raised-button color="accent" (click)="authentification()">Connexion</button>
   </form>
+  <div *ngIf="!authentificationReussi">
+      Connexion échouée. Les identifiants ne sont pas bon.
+  </div>
 </div>

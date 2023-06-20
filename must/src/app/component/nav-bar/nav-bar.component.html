@@ -1,5 +1,11 @@
 <div class="barre_navigation"> Accueil | News | 
-    <div class="barre_navigation__fin">
+    <div class="barre_navigation__fin" *ngIf="!utilisateurConnecte; else deco">
         <a  routerLink="/login" routerLinkActive="active" >Login</a>  
-    </div> 
+    </div>
+    <ng-template #deco>
+        <div class="barre_navigation__fin">
+            <a routerLink="/login" routerLinkActive="active">Déconnexion</a>
+        </div>
+    </ng-template> 
 </div>
+

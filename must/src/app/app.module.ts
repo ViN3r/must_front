@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthentificationService } from './service/authentification.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BasDePageComponent } from './component/bas-de-page/bas-de-page.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BasDePageComponent } from './component/bas-de-page/bas-de-page.componen
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [AuthentificationService],
   bootstrap: [AppComponent]

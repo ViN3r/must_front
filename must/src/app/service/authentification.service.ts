@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,7 @@ export class AuthentificationService {
   };
 
   constructor(private http: HttpClient) { }
+  utilisateurConnecte: Subject<any> = new Subject<any>();
 
   authentification(formulaire: any ): Observable<any> {
     return this.http.get<any>(`/api/authentification?email=${formulaire.email}&password=${formulaire.mdp}`, this.optionRequete );

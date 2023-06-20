@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { AuthentificationService } from 'src/app/service/authentification.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.sass']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
 
-  constructor() {}
+  utilisateurConnecte: any
+  constructor(public authentificationService: AuthentificationService) { }
+  
+  ngOnInit(): void {
+    this.authentificationService.utilisateurConnecte.subscribe({
+          next: (utilisateurConnecte) => {
+          this.utilisateurConnecte = utilisateurConnecte;
+          }
+      })
+  }
 
 }

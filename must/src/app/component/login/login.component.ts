@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthentificationService } from 'src/app/service/authentification.service';
 
@@ -7,25 +7,30 @@ import { AuthentificationService } from 'src/app/service/authentification.servic
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.sass']
 })
-export class LoginComponent {
-  email: string = '';
-  password: string = '';
+export class LoginComponent implements OnInit {
+  hide = true;
+  authentificationReussi = true;
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     mdp: ['', [Validators.required]]
   });
 
+  utilisateurConnecte: any;
   constructor (private authentificationService: AuthentificationService, private fb: FormBuilder) {
     
   }
   
-
+  ngOnInit() { }
+  
   authentification() {
-    console.log('authentification', this.form.value);
     this.authentificationService.authentification(this.form.value).subscribe(
-      {next : (res) =>  console.log('authentification reussi ', res),
-      error:  (error) => console.log('authentification failed', error),
-    complete: () => { console.log("ici")}}
+      {
+        next: (res) => {
+          this.authentificationService.utilisateurConnecte.next(res);
+          this.authentificationReussi = true;
+        },
+        error: (error) => this.authentificationReussi = false,
+      complete: () => { console.log("complete")}}
       );
   }
 }
