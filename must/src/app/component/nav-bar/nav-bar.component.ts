@@ -1,5 +1,6 @@
 import { AuthentificationService } from 'src/app/service/authentification.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   utilisateurConnecte: any
-  constructor(public authentificationService: AuthentificationService) { }
+  constructor(public authentificationService: AuthentificationService, public router: Router) { }
   
   ngOnInit(): void {
     this.authentificationService.utilisateurConnecte.subscribe({
@@ -19,4 +20,7 @@ export class NavBarComponent implements OnInit {
       })
   }
 
+  open(route: string) {
+    this.router.navigateByUrl(`${route}`);
+  }
 }

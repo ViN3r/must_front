@@ -1,0 +1,27 @@
+<div>
+    <h1>  Page d'adminstration des adhérents </h1>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Ajout d'un nouvel adhérent
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <form >
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Nom" formControlName="nom" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <input matInput placeholder="Prénom" formControlName="prenom" required>
+                </mat-form-field>
+            </form>
+        </mat-expansion-panel>
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Liste des adhérents
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

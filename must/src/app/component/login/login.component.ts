@@ -33,4 +33,11 @@ export class LoginComponent implements OnInit {
       complete: () => { console.log("complete")}}
       );
   }
+
+  testApi() {
+    this.authentificationService.testApi().subscribe({
+      next: (res) => console.log("OK car authen"),
+      error: (error) => console.error("Pas bon", error)
+    })
+  }
 }

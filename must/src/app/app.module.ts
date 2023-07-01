@@ -14,6 +14,12 @@ import { AuthentificationService } from './service/authentification.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BasDePageComponent } from './component/bas-de-page/bas-de-page.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatTableModule} from '@angular/material/table';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
+import { RosterModule } from './component/roster/roster.module';
+import { SharedModule } from './module/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatTableModule,
+    RosterModule,
+    SharedModule
   ],
   providers: [AuthentificationService],
   bootstrap: [AppComponent]

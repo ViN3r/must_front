@@ -19,4 +19,8 @@ export class AuthentificationService {
   authentification(formulaire: any ): Observable<any> {
     return this.http.get<any>(`/api/authentification?email=${formulaire.email}&password=${formulaire.mdp}`, this.optionRequete );
   }
+
+  testApi(): Observable<any> {
+      return this.http.get<any>(`/api/hello`, this.optionRequete );
+  }
 }

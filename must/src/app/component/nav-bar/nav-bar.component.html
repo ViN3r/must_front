@@ -1,11 +1,25 @@
 <div class="barre_navigation"> Accueil | News | 
+    <button mat-button [matMenuTriggerFor]="menu">Equipe</button>
+    <button mat-button [matMenuTriggerFor]="menuAdmin"  *ngIf="utilisateurConnecte" >
+        Adminstration
+    </button>
     <div class="barre_navigation__fin" *ngIf="!utilisateurConnecte; else deco">
         <a  routerLink="/login" routerLinkActive="active" >Login</a>  
     </div>
     <ng-template #deco>
         <div class="barre_navigation__fin">
-            <a routerLink="/login" routerLinkActive="active">Déconnexion</a>
+            <a routerLink="/logout" routerLinkActive="active">Déconnexion</a>
         </div>
     </ng-template> 
 </div>
 
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="open('roster')">Roster</button>
+    <button mat-menu-item>Compétition</button>
+</mat-menu>
+
+<mat-menu #menuAdmin="matMenu">
+    <button mat-menu-item (click)="open('adherents')">Gestion adhérents</button>
+    <button mat-menu-item>Gestion matériels</button>
+    <button mat-menu-item> Calendrier</button>
+</mat-menu>
