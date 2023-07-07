@@ -1,0 +1,14 @@
+<h1> ajout membre </h1>
+<div class="formulaire">
+<div [formGroup]="formMembre">
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Nom" formControlName="nom" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <input matInput placeholder="Prénom" formControlName="prenom" required>
+    </mat-form-field>
+</div>
+Categories : <app-list-categorie [obsElement]="obsCategory"></app-list-categorie>
+Section : <app-list-categorie [obsElement]="obsSection"></app-list-categorie>
+<button  mat-raised-button color="accent"  > Enregistrer </button>
+</div>

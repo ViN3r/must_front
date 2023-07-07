@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ReferentielService } from 'src/app/service/referentiel.service';
 
 @Component({
   selector: 'app-roster',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class RosterComponent {
 
+  osbCategory: Observable<any>
+  constructor(private referentielService: ReferentielService) {
+    this.osbCategory = this.referentielService.getCategorie();
+  }
 }

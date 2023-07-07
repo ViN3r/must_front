@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Form, FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { AjoutMembreComponent } from '../dialog/ajout-membre/ajout-membre.component';
 
 @Component({
   selector: 'app-gestion-membre',
@@ -8,10 +10,15 @@ import { Form, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class GestionMembreComponent {
 
-  formMembre: FormGroup;
-  constructor(public fb: FormBuilder) {
-    this.formMembre = this.fb.group({
-      nom: null
+  constructor(public fb: FormBuilder, public dialog: MatDialog) { }
+
+  openDialog() {
+    console.log("open dialog");
+     const dialogRef = this.dialog.open(AjoutMembreComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
+
 }
