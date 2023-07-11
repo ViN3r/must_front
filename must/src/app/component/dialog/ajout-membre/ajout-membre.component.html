@@ -8,7 +8,8 @@
         <input matInput placeholder="Prénom" formControlName="prenom" required>
     </mat-form-field>
 </div>
-Categories : <app-list-categorie [obsElement]="obsCategory"></app-list-categorie>
-Section : <app-list-categorie [obsElement]="obsSection"></app-list-categorie>
-<button  mat-raised-button color="accent"  > Enregistrer </button>
+Types de membres : <app-list-categorie [obsElement]="obsTypeMembre" [champs]="getControl('typeMembre')"></app-list-categorie>
+Categories : <app-list-categorie [obsElement]="obsCategory" [champs]="getControl('categorie')"></app-list-categorie>
+Section : <app-list-categorie [obsElement]="obsSection" [champs]="getControl('section')"></app-list-categorie>
+<button  mat-raised-button color="accent" (click)="save()" [disabled]="!formMembre.valid"> Enregistrer </button>
 </div>

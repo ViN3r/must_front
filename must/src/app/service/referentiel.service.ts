@@ -22,4 +22,8 @@ export class ReferentielService {
   getCategorie(): Observable<any> {
     return this.http.get<any>(`/api/referentiel/categorie`, this.optionRequete );
   }
+
+  getTypeMembre(): Observable<any> {
+    return this.http.get<any>(`/api/referentiel/type`, this.optionRequete );
+  }
 }
