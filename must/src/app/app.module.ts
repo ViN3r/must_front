@@ -17,6 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 
 import { RosterModule } from './component/roster/roster.module';
 import { SharedModule } from './module/shared/shared.module';
+import { MembreService } from './service/membre.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { SharedModule } from './module/shared/shared.module';
     RosterModule,
     SharedModule
   ],
-  providers: [AuthentificationService],
+  providers: [AuthentificationService, MembreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
