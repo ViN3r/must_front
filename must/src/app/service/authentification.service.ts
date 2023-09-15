@@ -23,4 +23,8 @@ export class AuthentificationService {
   testApi(): Observable<any> {
       return this.http.get<any>(`/api/hello`, this.optionRequete );
   }
+
+  isLogged() {
+    return this.utilisateurConnecte.subscribe((value) => console.log(value) )
+  }
 }

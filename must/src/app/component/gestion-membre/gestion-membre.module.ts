@@ -5,6 +5,7 @@ import { GestionMembreRoutingModule } from './gestion-membre-routing.module';
 import { GestionMembreComponent } from './gestion-membre.component';
 import { SharedModule } from 'src/app/module/shared/shared.module';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     GestionMembreRoutingModule,
     SharedModule,
     MatExpansionModule,
+    MatPaginatorModule
   ]
 })
 export class GestionMembreModule { }

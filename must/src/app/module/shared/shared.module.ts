@@ -34,7 +34,8 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ]
 })
 export class SharedModule { }

@@ -20,4 +20,8 @@ export class MembreService {
   addMembre(membre: any): Observable<any> {
     return this.http.post<any>(`/api/membres`,JSON.stringify(membre), this.optionRequete );
   }
+
+  getMembres(pageIndex: number, pageSize: number): Observable<any> {
+    return this.http.get<any>(`/api/membres?pageIndex=${pageIndex}&pageSize=${pageSize}`);
+  }
 }
